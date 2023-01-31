@@ -10,13 +10,15 @@ class XyloButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: () {
-        final player = AudioPlayer();
-        player.play(AssetSource(soundPath));
-      },
-      enableFeedback: false,
-      color: xyloButtonColor,
+    return Expanded(
+      child: MaterialButton(
+        onPressed: () {
+          final player = AudioPlayer();
+          player.play(AssetSource(soundPath));
+        },
+        enableFeedback: false,
+        color: xyloButtonColor,
+      ),
     );
   }
 }

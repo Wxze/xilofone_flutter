@@ -13,6 +13,7 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
           body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: const [
             XyloButton(xyloButtonColor: Colors.red, soundPath: 'note1.wav'),
             XyloButton(xyloButtonColor: Colors.orange, soundPath: 'note2.wav'),
