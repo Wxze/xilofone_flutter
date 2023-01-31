@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:xilofone_flutter/xylobutton.dart';
 
 void main() => runApp(const XylophoneApp());
 
@@ -10,17 +11,19 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: MaterialButton(
-            onPressed: () {
-              final player = AudioPlayer();
-              player.play(AssetSource('note1.wav'));
-            },
-            enableFeedback: false,
-            child: const Text('Click me!'),
-          ),
+          body: SafeArea(
+        child: Column(
+          children: const [
+            XyloButton(xyloButtonColor: Colors.red, soundPath: 'note1.wav'),
+            XyloButton(xyloButtonColor: Colors.orange, soundPath: 'note2.wav'),
+            XyloButton(xyloButtonColor: Colors.yellow, soundPath: 'note3.wav'),
+            XyloButton(xyloButtonColor: Colors.green, soundPath: 'note4.wav'),
+            XyloButton(xyloButtonColor: Colors.teal, soundPath: 'note5.wav'),
+            XyloButton(xyloButtonColor: Colors.blue, soundPath: 'note6.wav'),
+            XyloButton(xyloButtonColor: Colors.purple, soundPath: 'note7.wav'),
+          ],
         ),
-      ),
+      )),
     );
   }
 }
